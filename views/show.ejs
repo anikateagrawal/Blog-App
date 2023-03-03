@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .article{
+            margin: 10px;
+            width: 800px;
+            height: 200px;
+            padding: 20px;
+            border: 2px solid black;
+        }
+        .btn{
+            padding: 10px;
+            border-radius: 3px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .r{
+            background-color: red;
+        }
+        .b{
+            background-color: blue;
+        }
+        .g{
+            background-color: rgb(15, 241, 52);
+        }
+        .btns{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <h3><%= blog.title %></h3>
+        <p><%=blog.date %></p>
+        <div class="btns">
+            <a href="/" class="btn b">All Articles</a> 
+        <a href="/articles/edit/<%=blog.id%>" class="btn g">Edit</a>
+        </div>
+        <h6><%= blog.description %></h6>
+        <h4>Content</h4>
+        <p><%=blog.content%></p>
+    </div>
+</body>
+</html>
