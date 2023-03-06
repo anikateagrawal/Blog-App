@@ -5,7 +5,7 @@ const methodOverride=require('method-override');
 const articles=require('./models/Article');
 const mongoose=require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/Articles').then(()=>console.log("DB connected"));
+mongoose.connect('mongodb+srv://Anikate7316ag:Anikate%4025@cluster0.ofjnmbo.mongodb.net/Articles').then(()=>console.log("DB connected")).catch((e)=>console.log(e));
 
 
 // articles.create({title:'abcd', date:d, description:'first article',  content:"articles are here"});
