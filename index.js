@@ -48,7 +48,7 @@ app.put('/articles/:id',async(req,res)=>{
     const d=new Date().toLocaleString();
     const {title,description,content}=req.body;
     await articles.findByIdAndUpdate(id,{title,d,description,content});
-    res.redirect('/articles/'+id);
+    res.redirect('/articles/show/'+id);
 })
 
 app.get('/articles/show/:id',async(req,res)=>{
