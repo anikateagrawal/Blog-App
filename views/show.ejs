@@ -48,7 +48,7 @@
 <body>
     <div class="article">
         <h3><%= blog.title %></h3>
-        <p><%=blog.date%></p>
+        <p><%=blog.date.toLocaleDateString()%></p>
         <div class="btns">
             <a href="/" class="btn b">All Articles</a> 
         <a href="/articles/edit/<%=blog.id%>" class="btn g">Edit</a>

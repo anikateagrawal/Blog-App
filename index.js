@@ -32,7 +32,7 @@ app.get('/articles/new',(req,res)=>{
 
 app.post('/articles',async(req,res)=>{
     const {title,description,content}=req.body;
-    const d=new Date().toLocaleDateString();
+    const d=new Date();
     await articles.create({title, date:d, description,  content});
     res.redirect('./');
 })
@@ -45,7 +45,7 @@ app.get('/articles/edit/:id',async(req,res)=>{
 
 app.put('/articles/:id',async(req,res)=>{
     const {id}=req.params;
-    const d=new Date().toLocaleDateString();
+    const d=new Date();
     const {title,description,content}=req.body;
     await articles.findByIdAndUpdate(id,{title,date:d,description,content});
     res.redirect('/articles/show/'+id);

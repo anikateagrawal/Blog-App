@@ -60,7 +60,7 @@
         <% blogs.forEach((blog) => { %>
             <div class="article">
                 <h3><%= blog.title %></h3>
-                <p><%=blog.date %></p>
+                <p><%=blog.date.toLocaleDateString() %></p>
                 <h6><%= blog.description %></h6>
                 <div class="btns">
                     <a href="/articles/show/<%=blog.id%>" class="btn b">Read More</a> 
