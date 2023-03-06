@@ -32,8 +32,8 @@ app.get('/articles/new',(req,res)=>{
 
 app.post('/articles',async(req,res)=>{
     const {title,description,content}=req.body;
-    const d=new Date().toLocaleString();
-    await articles.create({title, d, description,  content});
+    const d=new Date().toLocaleDateString();
+    await articles.create({title, date:d, description,  content});
     res.redirect('./');
 })
 
@@ -45,9 +45,9 @@ app.get('/articles/edit/:id',async(req,res)=>{
 
 app.put('/articles/:id',async(req,res)=>{
     const {id}=req.params;
-    const d=new Date().toLocaleString();
+    const d=new Date().toLocaleDateString();
     const {title,description,content}=req.body;
-    await articles.findByIdAndUpdate(id,{title,d,description,content});
+    await articles.findByIdAndUpdate(id,{title,date:d,description,content});
     res.redirect('/articles/show/'+id);
 })
 
